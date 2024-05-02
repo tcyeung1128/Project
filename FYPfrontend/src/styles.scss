@@ -1,0 +1,123 @@
+/* You can add global styles to this file, and also import other style files */
+@import "~bootstrap-icons/font/bootstrap-icons.css";
+
+body {
+    font-family: 'Exo 2', sans-serif !important;
+    background-color: #21242E !important;
+    min-width: 300px;
+}
+
+button {
+    border-radius: 10px !important;
+    border-color: white;
+    border-style: solid;
+    padding: 5px 7px 5px 7px;
+}
+
+button:hover {
+    border-color: #f96178;
+}
+
+button:active {
+    background-color: #21242E;
+}
+
+input {
+    border-radius: 15px;
+    border-style: solid;
+    border-width: 2px;
+    border-color: #404554;
+    outline: none;
+    padding: 5px;
+    color: white;
+}
+
+input:focus-visible {
+    border-color: #f96178;
+    border-width: 2px;
+}
+
+.background-color-a {
+    background-color: #20232c
+}
+
+.background-color-b {
+    background-color: #161823;
+}
+
+.background-color-c {
+    background-color: #1B2032;
+}
+
+.background-color-d {
+    background-color: #f5f5f5;
+}
+
+.background-color-e {
+    background-color: #ffffff;
+}
+
+.color-white {
+    color: white;
+}
+
+.color-red {
+    color: #f96178;
+}
+
+.color-green {
+    color: #61f9b2;
+}
+
+.color-blue {
+    color: #61a3f9;
+}
+
+.color-purple {
+    color: #c0b8fb;
+}
+
+
+.color-gray {
+    color: #7D8298;
+}
+
+.color-black {
+    color: #212529;
+}
+
+.text-size-2rem {
+    font-size: 2rem;
+}
+
+.text-size-1-5rem {
+    font-size: 1.5rem;
+}
+
+.text-size-1-2rem {
+    font-size: 1.2rem;
+}
+
+.width-1rem {
+    width: 1rem;
+}
+
+.width-2rem {
+    width: 2rem;
+}
+
+.width-3rem {
+    width: 3rem;
+}
+
+.page-div{
+    width: 50px;
+}
+
+.page-button{
+    width: 35px;
+    height: 35px;
+}
+
+/* Importing Bootstrap SCSS file. */
+@import 'bootstrap/scss/bootstrap';

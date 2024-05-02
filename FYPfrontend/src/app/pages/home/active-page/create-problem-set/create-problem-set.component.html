@@ -1,0 +1,132 @@
+<div class="color-white text-size-1-5rem mb-3">Create problem set</div>
+<div class="container-fluid m-0 p-0 mb-5">
+    <div class="row m-0 p-0">
+
+        <div class="color-white col-12 mb-3">Problem Set Name : </div>
+        <div class="color-white col-12 mb-3">
+            <div class="color-white col-12 mb-3" *ngIf="!createProblemSet.editingProblemSetName">
+                {{createProblemSet.problemSetName}}</div>
+            <input type="text" class="background-color-a w-75" [(ngModel)]="createProblemSet.problemSetName"
+                *ngIf="createProblemSet.editingProblemSetName">
+        </div>
+        <div class="color-white col-12 mb-3">
+            <button class="background-color-b color-white" *ngIf="!createProblemSet.editingProblemSetName"
+                (click)="problemSetName()">Edit</button>
+            <button class="background-color-b color-white" *ngIf="createProblemSet.editingProblemSetName"
+                (click)="problemSetName()">Save</button>
+        </div>
+        <div class="col-12 m-0 p-0 mb-3">
+            <div class="color-red d-inline" [innerHTML]="createProblemSet.errorMessageProblemSetName"></div>
+        </div>
+
+        <div class="color-white col-12 mb-3">Problem Set Description : </div>
+        <div class="color-white col-12 mb-3">
+            <div class="color-white col-12 mb-3" *ngIf="!createProblemSet.editingProblemSetDescription">
+                {{createProblemSet.problemSetDescription}}</div>
+            <input type="text" class="background-color-a w-75" [(ngModel)]="createProblemSet.problemSetDescription"
+                *ngIf="createProblemSet.editingProblemSetDescription">
+        </div>
+        <div class="color-white col-12 mb-3">
+            <button class="background-color-b color-white" *ngIf="!createProblemSet.editingProblemSetDescription"
+                (click)="problemSetDescription()">Edit</button>
+            <button class="background-color-b color-white" *ngIf="createProblemSet.editingProblemSetDescription"
+                (click)="problemSetDescription()">Save</button>
+        </div>
+        <div class="col-12 m-0 p-0 mb-3">
+            <div class="color-red d-inline" [innerHTML]="createProblemSet.errorMessageProblemSetDescription"></div>
+        </div>
+
+    </div>
+</div>
+
+<div class="container-fluid m-0 p-0 mb-3">
+    <div class="d-flex w-100" *ngFor="let item of createDataValue; let i =index">
+        <div class="color-white width-3rem">
+            {{i+1}}.
+        </div>
+        <div class="d-inline w-100">
+            <div class="row m-0 p-0">
+
+                <div class="color-white col-12 m-0 p-0 mb-3">Question : </div>
+                <div class="col-12 m-0 p-0 mb-3" *ngIf="!item.editingQuestion">
+                    <div class="color-white d-inline">{{item.questionListQuestion}}</div>
+                </div>
+                <div class="col-12 m-0 p-0 mb-3" *ngIf="item.editingQuestion">
+                    <input type="text" class="background-color-a w-75" [(ngModel)]="item.questionListQuestion">
+                </div>
+                <div class="color-white col-12 m-0 p-0  mb-3">
+                    <button class="background-color-b color-white" *ngIf="!item.editingQuestion"
+                        (click)="question(i)">Edit</button>
+                    <button class="background-color-b color-white" *ngIf="item.editingQuestion"
+                        (click)="question(i)">Save</button>
+                </div>
+
+                <div class="color-white col-12 m-0 p-0 mb-3">Answer : </div>
+                <div class="col-12 m-0 p-0 mb-3" *ngIf="!item.editingAnswer">
+                    <div class="color-white d-inline">{{item.questionListAnswer}}</div>
+                </div>
+                <div class="col-12 m-0 p-0 mb-3" *ngIf="item.editingAnswer">
+                    <input type="text" class="background-color-a w-75" [(ngModel)]="item.questionListAnswer">
+                </div>
+                <div class="color-white col-12 m-0 p-0  mb-3">
+                    <button class="background-color-b color-white" *ngIf="!item.editingAnswer"
+                        (click)="answer(i)">Edit</button>
+                    <button class="background-color-b color-white" *ngIf="item.editingAnswer"
+                        (click)="answer(i)">Save</button>
+                </div>
+
+                <div class="color-white col-12 m-0 p-0 mb-3">Choice : </div>
+                <div class="col-12 m-0 p-0 mb-3" *ngIf="item.questionListTypeName=='Multiple Choice'">
+
+                    <div class="color-white mb-3" *ngFor="let mcItem of item.questionListChoice; let j =index">
+                        <div *ngIf="!mcItem.editing" class="mb-3">
+                            <input type="radio" name="TotalNumberOfQuestions" value="{{mcItem}}"
+                                [(ngModel)]="mcItem.choices">
+                            <div class="d-inline ms-1">{{mcItem.choices}}</div>
+                        </div>
+
+                        <input type="text" class="background-color-a w-75 mb-3" [(ngModel)]="mcItem.choices"
+                            *ngIf="mcItem.editing">
+
+                        <div class="color-white col-12 m-0 p-0  mb-3">
+                            <button class="background-color-b color-white" *ngIf="!mcItem.editing"
+                                (click)="choiceMC(i,j)">Edit</button>
+                            <button class="background-color-b color-white" *ngIf="mcItem.editing"
+                                (click)="choiceMC(i,j)">Save</button>
+                            <button class="background-color-b color-white ms-3" (click)="deleteMC(i,j)">Delete</button>
+                        </div>
+                    </div>
+
+                    <div>
+                        <button class="background-color-b color-white me-3" (click)="addChoice(i)">
+                            Add choice
+                        </button>
+                        <button class="background-color-b color-white" (click)="deleteQuestion(i)">
+                            Delete question
+                        </button>
+                    </div>
+                </div>
+
+                <div class="col-12 m-0 p-0 mb-3">
+                    <div class="color-red d-inline" [innerHTML]="item.errorMessage"></div>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid m-0 p-0 mb-3">
+    <div class="row m-0 p-0">
+        <div class="col-12">
+            <button class="background-color-b color-white" (click)="addQuestion()">
+                Add question
+            </button>
+        </div>
+    </div>
+</div>
+
+<div class="d-flex justify-content-center mb-3">
+    <button class="background-color-b color-white" (click)="Submit()">Submit</button>
+</div>

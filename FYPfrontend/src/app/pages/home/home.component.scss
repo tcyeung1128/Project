@@ -1,0 +1,28 @@
+.container-div{
+    border-width: 2px 0px 2px 0px;
+    border-style: solid;
+    border-color: #404554;
+}
+
+.left-col{
+    border-width: 0px 2px 0px 0px;
+    border-style: solid;
+    border-color: #404554;
+}
+
+.left-col-text{
+    text-decoration:none;
+    font-size: 1.2rem;
+}
+
+.left-col-text:hover{
+    text-decoration:underline;
+}
+
+@media only screen and (max-width: 768px) {
+    .left-col{
+        border-width: 0px 2px 2px 0px;
+        border-style: solid;
+        border-color: #404554;
+    }
+  }

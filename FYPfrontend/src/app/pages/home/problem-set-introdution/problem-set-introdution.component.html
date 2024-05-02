@@ -1,0 +1,48 @@
+<div class="container-fluid">
+    <div class="d-flex align-items-center justify-content-center" *ngIf="getProblemSetItemValue">
+        <div class="row m-0 p-0 color-white p-3 w-100">
+
+            <div class="col-12 m-0 p-0 text-size-1-5rem">
+                <i class="bi bi-patch-question"></i>
+                <div class="d-inline ms-2">{{getProblemSetItemValue.problem_set_name}}</div>
+            </div>
+
+            <div class="col-12 m-0 p-0 text-size-1-2rem">
+                <div class="d-inline">{{getProblemSetItemValue.problem_set_description}}</div>
+            </div>
+
+            <div class="col-12 m-0 p-0 d-flex justify-content-center justify-content-md-end"
+                *ngIf="!getProblemSetItemValue.isMyProblemSet && !getProblemSetItemValue.isSubscribe">
+                <button class="background-color-b color-white" (click)="SubscribeProblemSet()">
+                    <div class="d-inline pe-2">Subscribe problem set</div>
+                    <i class="bi bi-bookmark-plus"></i>
+                </button>
+            </div>
+
+            <div class="col-12 m-0 p-0 d-flex justify-content-center justify-content-md-end"
+                *ngIf="!getProblemSetItemValue.isMyProblemSet && getProblemSetItemValue.isSubscribe">
+                <button class="background-color-b color-white" (click)="UnsubscribeProblemSet()">
+                    <div class="d-inline pe-2">Unsubscribe problem set</div>
+                    <i class="bi bi-bookmark-dash"></i>
+                </button>
+            </div>
+
+            <div class="col-12 m-0 p-0">
+                <hr class="w-100">
+            </div>
+
+            <div class="col-12 m-0 p-0">
+                <div class="container-fluid m-0 p-0">
+                    <div class="row m-0 p-0">
+                        <div class="col-12 m-0 p-0 pb-2">
+                            <div class="d-inline">Total number of questions :</div>
+                        </div>
+                        <div class="col-12 m-0 p-0 pb-2">
+                            <div class="">{{getProblemSetItemValue.questionListCount}}</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,50 @@
+<div class="container-fluid ">
+    <div class="d-flex align-items-center justify-content-center">
+        <div class="row color-white p-3 w-100">
+            <div class="col-12">
+                <div class="w-100">My subscribe problem set list</div>
+                <div class="row">
+                    <div class="col-12 col-md-6 col-xl-3" *ngFor="let item of getSubscribedUsersProblemSetValue; let i=index">
+                        <app-problem-set-card
+                            [routerLink]="['/home/problemsetpages/', getSubscribedUsersProblemSetValue[i].problem_set_guid]"
+                            [problem_set_name]="getSubscribedUsersProblemSetValue[i].problem_set_name"
+                            [problem_set_description]="getSubscribedUsersProblemSetValue[i].problem_set_description"></app-problem-set-card>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid mb-3">
+    <div class="d-flex justify-content-center">
+        <div class="page-div">
+            <button *ngIf="currentPage!=1"
+                class="page-button background-color-b color-white d-flex justify-content-center align-items-center"
+                (click)="changePage(1)">
+                <i class="bi bi-chevron-double-left"></i>
+            </button>
+        </div>
+        <div class="page-div">
+            <button *ngIf="currentPage!=1"
+                class="page-button background-color-b color-white d-flex justify-content-center align-items-center"
+                (click)="changePage(currentPage-1)">
+                <i class="bi bi-chevron-left"></i>
+            </button>
+        </div>
+        <div class="page-div">
+            <button *ngIf="currentPage!=maxPage && maxPage!==0"
+                class="page-button background-color-b color-white d-flex justify-content-center align-items-center"
+                (click)="changePage(currentPage+1)">
+                <i class="bi bi-chevron-right"></i>
+            </button>
+        </div>
+        <div class="page-div">
+            <button *ngIf="currentPage!=maxPage && maxPage!==0"
+                class="page-button background-color-b color-white d-flex justify-content-center align-items-center"
+                (click)="changePage(maxPage)">
+                <i class="bi bi-chevron-double-right"></i>
+            </button>
+        </div>
+    </div>
+</div>

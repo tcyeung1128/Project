@@ -1,0 +1,91 @@
+<div class="container-fluid ">
+    <div class="d-flex align-items-center justify-content-center">
+        <div class="row color-white p-3 w-100">
+            <div class="col-12">
+                <div class="row justify-content-around">
+                    <div class="col-9 col-sm-10 m-0 p-0">
+                        <div>
+                            <input class="rounded border border-2 color-white w-100 background-color-a" type="text"
+                                [(ngModel)]="textValue" placeholder="Search">
+                        </div>
+                    </div>
+                    <div class="col-2 col-sm-1 m-0 p-0">
+                        <button
+                            class="rounded-end w-100 h-100 background-color-b color-white d-flex justify-content-center align-items-center"
+                            (click)="searchButton()">
+                            <i class="bi bi-arrow-return-left"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 m-0 p-0">
+                <hr class="w-100">
+            </div>
+            <div class="col-12">
+                <div class="w-100">Recently Updated Question Set for Non-Subscribers</div>
+                <div class="row" *ngIf="getLatestUpdatedProblemSetValue&&getLatestUpdatedProblemSetValue.length>0">
+                    <div class="col-12 col-md-6"
+                        *ngFor="let item of getLatestUpdatedProblemSetValue; let i=index">
+                        <app-problem-set-card
+                            [routerLink]="['/home/problem-set-introdution/', getLatestUpdatedProblemSetValue[i].problem_set_guid]"
+                            [problem_set_name]="getLatestUpdatedProblemSetValue[i].problem_set_name"
+                            [problem_set_description]="getLatestUpdatedProblemSetValue[i].problem_set_description"></app-problem-set-card>
+                    </div>
+                </div>
+            </div>
+            <!-- <div class="col-12 m-0 p-0">
+                <hr class="w-100">
+            </div>
+            <div class="col-12">
+                <div class="w-100">Recommend</div>
+                <div class="row">
+                    <div class="col-12 col-md-6 col-xl-3">
+                        <app-problem-set-card routerLink="/home/problemsetpages"></app-problem-set-card>
+                    </div>
+                    <div class="col-12 col-md-6 col-xl-3">
+                        <app-problem-set-card routerLink="/home/problemsetpages"></app-problem-set-card>
+                    </div>
+                    <div class="col-12 col-md-6 col-xl-3">
+                        <app-problem-set-card routerLink="/home/problemsetpages"></app-problem-set-card>
+                    </div>
+                    <div class="col-12 col-md-6 col-xl-3">
+                        <app-problem-set-card routerLink="/home/problemsetpages"></app-problem-set-card>
+                    </div>
+                </div>
+            </div> -->
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid mb-3">
+    <div class="d-flex justify-content-center">
+        <div class="page-div">
+            <button *ngIf="currentPage!=1"
+                class="page-button background-color-b color-white d-flex justify-content-center align-items-center"
+                (click)="changePage(1)">
+                <i class="bi bi-chevron-double-left"></i>
+            </button>
+        </div>
+        <div class="page-div">
+            <button *ngIf="currentPage!=1"
+                class="page-button background-color-b color-white d-flex justify-content-center align-items-center"
+                (click)="changePage(currentPage-1)">
+                <i class="bi bi-chevron-left"></i>
+            </button>
+        </div>
+        <div class="page-div">
+            <button *ngIf="currentPage!=maxPage && maxPage!==0"
+                class="page-button background-color-b color-white d-flex justify-content-center align-items-center"
+                (click)="changePage(currentPage+1)">
+                <i class="bi bi-chevron-right"></i>
+            </button>
+        </div>
+        <div class="page-div">
+            <button *ngIf="currentPage!=maxPage && maxPage!==0"
+                class="page-button background-color-b color-white d-flex justify-content-center align-items-center"
+                (click)="changePage(maxPage)">
+                <i class="bi bi-chevron-double-right"></i>
+            </button>
+        </div>
+    </div>
+</div>

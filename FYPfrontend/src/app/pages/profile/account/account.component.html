@@ -1,0 +1,46 @@
+<div class="container-fluid color-white">
+    <div class="row justify-content-center align-items-center text-center">
+        <div class="col-12 my-1">
+            <div class="text-size-2rem">Change password</div>
+        </div>
+    </div>
+    <div class="row justify-content-center align-items-center text-center mt-3 mb-5">
+        <div class="col-4 m-0 p-0 d-flex justify-content-center align-items-center">
+            <div class="row justify-content-center align-items-center">
+                <div class="col-12 my-1">
+                    <div class="">Old password</div>
+                </div>
+                <div class="col-12 my-1">
+                    <input class="login-input-bg background-color-a" type="password"
+                        [(ngModel)]="modifyValue.oldPassword">
+                </div>
+                <div class="col-12 my-1">
+                    <div class="">New password</div>
+                </div>
+                <div class="col-12 my-1">
+                    <input class="login-input-bg background-color-a" type="password"
+                        [(ngModel)]="modifyValue.newPassword">
+                </div>
+                <div class="col-12 my-1">
+                    <div class="">Confirm new password</div>
+                </div>
+                <div class="col-12 my-1">
+                    <input class="login-input-bg background-color-a" type="password"
+                        [(ngModel)]="modifyValue.confirmNewPassword">
+                </div>
+                <div class="col-12 my-1 d-flex justify-content-around mb-5">
+                    <button class="background-color-b color-white" (click)="modifyAccount()">
+                        Update password
+                    </button>
+                </div>
+                <div class="col-12 my-1 d-flex justify-content-around mb-5">
+                    <div class="color-white">
+                        *The password must contain at least one letter and one number, with a minimum length of 8 characters.
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</div>

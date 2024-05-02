@@ -1,0 +1,71 @@
+.navbar-background-div {
+    height: 75px;
+    font-size: 40px;
+}
+
+.logo-icon {
+    font-size: 30px;
+}
+
+.logo-text {
+    font-size: 30px;
+}
+
+.navbar-button {
+    position: relative;
+    font-size: 20px;
+    text-decoration: none;
+    color: white;
+}
+
+.navbar-button:after {
+    content: "";
+    position: absolute;
+    left: 0px;
+    bottom: 0px;
+    height: 1px;
+    width: 0%;
+    background-color: #fffefe00;
+    transition: width 1s;
+    border-radius: 10px;
+}
+
+.navbar-button:hover {
+    font-size: 25px;
+    color: #f96178;
+    cursor: pointer;
+}
+
+.navbar-button:hover::after {
+    content: "";
+    background-color: #f96178;
+    width: 50%;
+}
+
+.baseMode-div-size {
+    width: 5rem;
+    height: 100%;
+}
+
+.mobileMode-div-size {
+    width: 3.5rem;
+    height: 100%;
+}
+
+.baseMode {
+    display: block;
+}
+
+.mobileMode {
+    display: none;
+}
+
+@media only screen and (max-width: 576px) {
+    .baseMode {
+        display: none;
+    }
+
+    .mobileMode {
+        display: block;
+    }
+}

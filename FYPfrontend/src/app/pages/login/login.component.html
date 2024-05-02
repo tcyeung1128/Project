@@ -1,0 +1,40 @@
+<div class="container-fluid color-white">
+    <div class="row justify-content-center align-items-center text-center">
+        <div class="col-12 color-white d-flex justify-content-center">
+            <i class="bi bi-bookmark-fill login-logo-icon"></i>
+            <div class="login-logo-text">QNA</div>
+        </div>
+        <div class="col-12 my-1">
+            <div class="text-size-2rem">Login</div>
+        </div>
+    </div>
+    <div class="row justify-content-center align-items-center text-center mt-3">
+        <div class="col-4 m-0 p-0 d-flex justify-content-center align-items-center">
+            <div class="row justify-content-center align-items-center background-color-b login-bg">
+                <div class="col-12 my-1">
+                    <div class="">Username</div>
+                </div>
+                <div class="col-12 my-1">
+                    <input class="login-input-bg background-color-a" type="text" [(ngModel)]="loginValue.user_account">
+                </div>
+                <div class="col-12 my-1">
+                    <div class="">Password</div>
+                </div>
+                <div class="col-12 my-1">
+                    <input class="login-input-bg background-color-a" type="password"
+                        [(ngModel)]="loginValue.user_password">
+                </div>
+                <div class="col-12 my-1 d-flex justify-content-around">
+                    <button class="background-color-b color-white" (click)="login()">
+                        Login
+                    </button>
+                    <button routerLink="/create-account" class="background-color-b color-white">
+                        Create account
+                    </button>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</div>

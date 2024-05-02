@@ -1,0 +1,28 @@
+<nav class="background-color-a w-100 navbar-background-div container-fluid">
+    <div class="row p-0 m-0 w-100 h-100 justify-content-between align-items-center" *ngIf="showLogoutButton">
+        <div class="col-2 p-0 m-0">
+            <div class="row">
+                <div class="col-12 color-white d-flex justify-content-start">
+                    <i class="bi bi-bookmark-fill logo-icon"></i>
+                    <div class="logo-text">QNA</div>
+                </div>
+            </div>
+        </div>
+        <div class="col-10 p-0 m-0 baseMode">
+            <div class="d-flex p-0 m-0 justify-content-end align-items-center">
+                    <a class="navbar-button baseMode-div-size" routerLink="/home/homepage">Home</a>
+                    <a class="navbar-button baseMode-div-size" routerLink="/profile">Profile</a>
+                    <a class="navbar-button baseMode-div-size" (click)="logout()">Logout</a>
+            </div>
+        </div>
+        <div class="col-10 p-0 m-0 mobileMode">
+            <div class="d-flex p-0 m-0 justify-content-end align-items-center">
+                <!-- <div class="color-gray d-flex justify-content-center"> -->
+                    <a class="navbar-button mobileMode-div-size" routerLink="/home/homepage"><i class="bi bi-house-door-fill"></i></a>
+                    <a class="navbar-button mobileMode-div-size" routerLink="/profile"><i class="bi bi-person-lines-fill"></i></a>
+                    <a class="navbar-button mobileMode-div-size" (click)="logout()"><i class="bi bi-door-closed-fill"></i></a>
+                <!-- </div> -->
+            </div>
+        </div>
+    </div>
+</nav>
